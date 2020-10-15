@@ -43,4 +43,8 @@
         Conta01.Extrato += $"{Now.ToString} - Depósito de R$ {FormatNumber(ValorDepositar, 2)} realizado. Saldo atual: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}"
         tb_extrato.Text = Conta01.Extrato
     End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles gb_details_2.Enter
+
+    End Sub
 End Class

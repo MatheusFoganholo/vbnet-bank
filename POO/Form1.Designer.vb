@@ -33,7 +33,19 @@ Partial Class Main
         Me.tb_extrato = New System.Windows.Forms.TextBox()
         Me.label_extrato = New System.Windows.Forms.Label()
         Me.gb_details = New System.Windows.Forms.GroupBox()
+        Me.gb_details_2 = New System.Windows.Forms.GroupBox()
+        Me.tb_extrato_2 = New System.Windows.Forms.TextBox()
+        Me.label_extrato_2 = New System.Windows.Forms.Label()
+        Me.label_saldo_2 = New System.Windows.Forms.Label()
+        Me.tb_saldo_2 = New System.Windows.Forms.TextBox()
+        Me.btn_transferir_2 = New System.Windows.Forms.Button()
+        Me.label_operations_2 = New System.Windows.Forms.Label()
+        Me.btn_sacar_2 = New System.Windows.Forms.Button()
+        Me.tb_valor_2 = New System.Windows.Forms.TextBox()
+        Me.btn_deposito_2 = New System.Windows.Forms.Button()
+        Me.label_digite_2 = New System.Windows.Forms.Label()
         Me.gb_details.SuspendLayout()
+        Me.gb_details_2.SuspendLayout()
         Me.SuspendLayout()
         '
         'label_saldo
@@ -143,11 +155,119 @@ Partial Class Main
         Me.gb_details.TabStop = False
         Me.gb_details.Text = "Detalhes da Conta"
         '
+        'gb_details_2
+        '
+        Me.gb_details_2.Controls.Add(Me.tb_extrato_2)
+        Me.gb_details_2.Controls.Add(Me.label_extrato_2)
+        Me.gb_details_2.Controls.Add(Me.label_saldo_2)
+        Me.gb_details_2.Controls.Add(Me.tb_saldo_2)
+        Me.gb_details_2.Controls.Add(Me.btn_transferir_2)
+        Me.gb_details_2.Controls.Add(Me.label_operations_2)
+        Me.gb_details_2.Controls.Add(Me.btn_sacar_2)
+        Me.gb_details_2.Controls.Add(Me.tb_valor_2)
+        Me.gb_details_2.Controls.Add(Me.btn_deposito_2)
+        Me.gb_details_2.Controls.Add(Me.label_digite_2)
+        Me.gb_details_2.Location = New System.Drawing.Point(621, 12)
+        Me.gb_details_2.Name = "gb_details_2"
+        Me.gb_details_2.Size = New System.Drawing.Size(581, 446)
+        Me.gb_details_2.TabIndex = 14
+        Me.gb_details_2.TabStop = False
+        Me.gb_details_2.Text = "Detalhes da Conta"
+        '
+        'tb_extrato_2
+        '
+        Me.tb_extrato_2.Enabled = False
+        Me.tb_extrato_2.Location = New System.Drawing.Point(293, 110)
+        Me.tb_extrato_2.Multiline = True
+        Me.tb_extrato_2.Name = "tb_extrato_2"
+        Me.tb_extrato_2.Size = New System.Drawing.Size(262, 313)
+        Me.tb_extrato_2.TabIndex = 11
+        '
+        'label_extrato_2
+        '
+        Me.label_extrato_2.AutoSize = True
+        Me.label_extrato_2.Location = New System.Drawing.Point(289, 87)
+        Me.label_extrato_2.Name = "label_extrato_2"
+        Me.label_extrato_2.Size = New System.Drawing.Size(237, 20)
+        Me.label_extrato_2.TabIndex = 12
+        Me.label_extrato_2.Text = "Histórico de operações (Extrato)"
+        '
+        'label_saldo_2
+        '
+        Me.label_saldo_2.AutoSize = True
+        Me.label_saldo_2.Location = New System.Drawing.Point(9, 87)
+        Me.label_saldo_2.Name = "label_saldo_2"
+        Me.label_saldo_2.Size = New System.Drawing.Size(89, 20)
+        Me.label_saldo_2.TabIndex = 2
+        Me.label_saldo_2.Text = "Saldo atual"
+        '
+        'tb_saldo_2
+        '
+        Me.tb_saldo_2.Enabled = False
+        Me.tb_saldo_2.Location = New System.Drawing.Point(13, 110)
+        Me.tb_saldo_2.Name = "tb_saldo_2"
+        Me.tb_saldo_2.Size = New System.Drawing.Size(244, 26)
+        Me.tb_saldo_2.TabIndex = 4
+        '
+        'btn_transferir_2
+        '
+        Me.btn_transferir_2.Location = New System.Drawing.Point(13, 381)
+        Me.btn_transferir_2.Name = "btn_transferir_2"
+        Me.btn_transferir_2.Size = New System.Drawing.Size(244, 42)
+        Me.btn_transferir_2.TabIndex = 10
+        Me.btn_transferir_2.Text = "Transferir"
+        Me.btn_transferir_2.UseVisualStyleBackColor = True
+        '
+        'label_operations_2
+        '
+        Me.label_operations_2.AutoSize = True
+        Me.label_operations_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label_operations_2.Location = New System.Drawing.Point(5, 164)
+        Me.label_operations_2.Name = "label_operations_2"
+        Me.label_operations_2.Size = New System.Drawing.Size(216, 46)
+        Me.label_operations_2.TabIndex = 5
+        Me.label_operations_2.Text = "Operações"
+        '
+        'btn_sacar_2
+        '
+        Me.btn_sacar_2.Location = New System.Drawing.Point(13, 333)
+        Me.btn_sacar_2.Name = "btn_sacar_2"
+        Me.btn_sacar_2.Size = New System.Drawing.Size(244, 42)
+        Me.btn_sacar_2.TabIndex = 9
+        Me.btn_sacar_2.Text = "Sacar"
+        Me.btn_sacar_2.UseVisualStyleBackColor = True
+        '
+        'tb_valor_2
+        '
+        Me.tb_valor_2.Location = New System.Drawing.Point(13, 249)
+        Me.tb_valor_2.Name = "tb_valor_2"
+        Me.tb_valor_2.Size = New System.Drawing.Size(244, 26)
+        Me.tb_valor_2.TabIndex = 6
+        '
+        'btn_deposito_2
+        '
+        Me.btn_deposito_2.Location = New System.Drawing.Point(13, 285)
+        Me.btn_deposito_2.Name = "btn_deposito_2"
+        Me.btn_deposito_2.Size = New System.Drawing.Size(244, 42)
+        Me.btn_deposito_2.TabIndex = 8
+        Me.btn_deposito_2.Text = "Depositar"
+        Me.btn_deposito_2.UseVisualStyleBackColor = True
+        '
+        'label_digite_2
+        '
+        Me.label_digite_2.AutoSize = True
+        Me.label_digite_2.Location = New System.Drawing.Point(9, 226)
+        Me.label_digite_2.Name = "label_digite_2"
+        Me.label_digite_2.Size = New System.Drawing.Size(113, 20)
+        Me.label_digite_2.TabIndex = 7
+        Me.label_digite_2.Text = "Digite um valor"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1089, 469)
+        Me.ClientSize = New System.Drawing.Size(1218, 469)
+        Me.Controls.Add(Me.gb_details_2)
         Me.Controls.Add(Me.gb_details)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "Main"
@@ -155,6 +275,8 @@ Partial Class Main
         Me.Text = "MazeBank"
         Me.gb_details.ResumeLayout(False)
         Me.gb_details.PerformLayout()
+        Me.gb_details_2.ResumeLayout(False)
+        Me.gb_details_2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -169,4 +291,15 @@ Partial Class Main
     Friend WithEvents tb_extrato As TextBox
     Friend WithEvents label_extrato As Label
     Friend WithEvents gb_details As GroupBox
+    Friend WithEvents gb_details_2 As GroupBox
+    Friend WithEvents tb_extrato_2 As TextBox
+    Friend WithEvents label_extrato_2 As Label
+    Friend WithEvents label_saldo_2 As Label
+    Friend WithEvents tb_saldo_2 As TextBox
+    Friend WithEvents btn_transferir_2 As Button
+    Friend WithEvents label_operations_2 As Label
+    Friend WithEvents btn_sacar_2 As Button
+    Friend WithEvents tb_valor_2 As TextBox
+    Friend WithEvents btn_deposito_2 As Button
+    Friend WithEvents label_digite_2 As Label
 End Class
