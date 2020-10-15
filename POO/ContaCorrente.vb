@@ -8,6 +8,7 @@
     Public Extrato As String = ""
 
     ' Função Sacar
+    ' Withdraw function
     Public Function Sacar(ValorSacar As Double) As Boolean
         Dim retorno As Boolean
         If Saldo < ValorSacar Then
@@ -20,9 +21,23 @@
     End Function
 
     ' Método de Depósito
+    ' Deposit Method
     Public Sub Depositar(ValorDeposito As Double)
         Saldo += ValorDeposito
     End Sub
 
+    ' Função de Transferência
+    ' Transfer function
+    Public Function Transferir(ValorTransferencia As Double, ByRef ContaDestino As ContaCorrente) As Boolean
+        Dim Retorno As Boolean
+        If Saldo < ValorTransferencia Or ValorTransferencia <= 0 Then
+            Retorno = False
+        Else
+            Saldo -= ValorTransferencia
+            ContaDestino.Depositar(ValorTransferencia)
+            Retorno = True
+        End If
+        Return Retorno
+    End Function
 
 End Class

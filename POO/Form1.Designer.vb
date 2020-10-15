@@ -120,10 +120,11 @@ Partial Class Main
         '
         'tb_extrato
         '
-        Me.tb_extrato.Enabled = False
         Me.tb_extrato.Location = New System.Drawing.Point(293, 110)
         Me.tb_extrato.Multiline = True
         Me.tb_extrato.Name = "tb_extrato"
+        Me.tb_extrato.ReadOnly = True
+        Me.tb_extrato.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.tb_extrato.Size = New System.Drawing.Size(262, 313)
         Me.tb_extrato.TabIndex = 11
         '
@@ -176,10 +177,11 @@ Partial Class Main
         '
         'tb_extrato_2
         '
-        Me.tb_extrato_2.Enabled = False
         Me.tb_extrato_2.Location = New System.Drawing.Point(293, 110)
         Me.tb_extrato_2.Multiline = True
         Me.tb_extrato_2.Name = "tb_extrato_2"
+        Me.tb_extrato_2.ReadOnly = True
+        Me.tb_extrato_2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.tb_extrato_2.Size = New System.Drawing.Size(262, 313)
         Me.tb_extrato_2.TabIndex = 11
         '
