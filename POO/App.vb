@@ -1,26 +1,36 @@
-﻿Public Class Main
+﻿Imports POO.MazeBank
+
+Public Class Main
     ReadOnly Conta01 As New ContaCorrente
     ReadOnly Conta02 As New ContaCorrente
 
     Public Sub New()
         InitializeComponent()
         ' Account 01 - Conta 01
-        Conta01.Titular = "Matheus Foganholo"
+        Conta01.Titular = New Cliente()
+        Conta01.Titular.Nome = "Matheus Foganholo"
+        Conta01.Titular.CPF = "123.456.789-01"
+        Conta01.Titular.Profissao = "Programador"
+        Conta01.Titular.Cidade = "Jaú"
         Conta01.NomeDoBanco = "NuBank"
         Conta01.Agencia = 1234
         Conta01.Conta = 5772992
         Conta01.Saldo = 5000
         tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
-        gb_details.Text = $"Bem-vindo, {Conta01.Titular}{vbCrLf}Banco: {Conta01.NomeDoBanco}{vbCrLf}Agência: {Conta01.Agencia}{vbCrLf}Número da conta: {Conta01.Conta}"
+        gb_details.Text = $"Bem-vindo, {Conta01.Titular.Nome}{vbCrLf}Banco: {Conta01.NomeDoBanco}{vbCrLf}Agência: {Conta01.Agencia}{vbCrLf}Número da conta: {Conta01.Conta}"
 
         ' Account 02 - Conta 02
-        Conta02.Titular = "Elís Peruchi"
+        Conta02.Titular = New Cliente
+        Conta02.Titular.Nome = "Elís Peruchi"
+        Conta02.Titular.CPF = "987.654.321-09"
+        Conta02.Titular.Profissao = "Veterinária"
+        Conta02.Titular.Cidade = "Torrinha"
         Conta02.NomeDoBanco = "Inter"
         Conta02.Agencia = 1234
         Conta02.Conta = 2202219
         Conta02.Saldo = 10000
         tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
-        gb_details_2.Text = $"Bem-vinda, {Conta02.Titular}{vbCrLf}Banco: {Conta02.NomeDoBanco}{vbCrLf}Agência: {Conta02.Agencia}{vbCrLf}Número da conta: {Conta02.Conta}"
+        gb_details_2.Text = $"Bem-vinda, {Conta02.Titular.Nome}{vbCrLf}Banco: {Conta02.NomeDoBanco}{vbCrLf}Agência: {Conta02.Agencia}{vbCrLf}Número da conta: {Conta02.Conta}"
     End Sub
 
     ' Withdraw - Account 01
@@ -77,13 +87,14 @@
                 MsgBox("Impossível transferir essa quantia. Digite um valor válido!", MsgBoxStyle.Critical)
             End If
         Else
-            tb_saldo.Text = Conta01.Saldo
-                tb_saldo_2.Text = Conta02.Saldo
-            Conta01.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} realizada para {Conta02.Titular}. Saldo restante: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
-            Conta02.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} recebida de {Conta01.Titular}. Saldo atual: R$ {FormatNumber(Conta02.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
+            tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
+            Conta01.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} realizada para {Conta02.Titular.Nome}. Saldo restante: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            Conta02.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} recebida de {Conta01.Titular.Nome}. Saldo atual: R$ {FormatNumber(Conta02.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
             tb_extrato.Text = Conta01.Extrato
-                tb_extrato_2.Text = Conta02.Extrato
-            MsgBox($"Transfêrencia de R$ {FormatNumber(ValorTransferencia, 2)} para {Conta02.Titular} efetuada com sucesso!", MsgBoxStyle.Information)
+            tb_extrato_2.Text = Conta02.Extrato
+            tb_valor.Text = ""
+            MsgBox($"Transfêrencia de R$ {FormatNumber(ValorTransferencia, 2)} para {Conta02.Titular.Nome} efetuada com sucesso!", MsgBoxStyle.Information)
 
         End If
     End Sub
@@ -142,13 +153,14 @@
                 MsgBox("Impossível transferir essa quantia. Digite um valor válido!", MsgBoxStyle.Critical)
             End If
         Else
-            tb_saldo.Text = Conta01.Saldo
-            tb_saldo_2.Text = Conta02.Saldo
-            Conta01.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} recebida de {Conta02.Titular}. Saldo atual: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
-            Conta02.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} realizada para {Conta01.Titular}. Saldo restante: R$ {FormatNumber(Conta02.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
+            tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
+            Conta01.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} recebida de {Conta02.Titular.Nome}. Saldo atual: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            Conta02.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} realizada para {Conta01.Titular.Nome}. Saldo restante: R$ {FormatNumber(Conta02.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
             tb_extrato.Text = Conta01.Extrato
             tb_extrato_2.Text = Conta02.Extrato
-            MsgBox($"Transfêrencia de R$ {FormatNumber(ValorTransferencia, 2)} para {Conta01.Titular} efetuada com sucesso!", MsgBoxStyle.Information)
+            tb_valor_2.Text = ""
+            MsgBox($"Transfêrencia de R$ {FormatNumber(ValorTransferencia, 2)} para {Conta01.Titular.Nome} efetuada com sucesso!", MsgBoxStyle.Information)
         End If
     End Sub
 

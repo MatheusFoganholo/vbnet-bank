@@ -1,6 +1,8 @@
-﻿Public Class ContaCorrente
+﻿Imports POO.MazeBank
 
-    Public Titular As String = "Nome Indefinido"
+Public Class ContaCorrente
+
+    Public Titular As Cliente
     Public NomeDoBanco As String = "Banco do Brasil"
     Public Agencia As Short = 1234
     Public Conta As Integer = 0
