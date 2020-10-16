@@ -21,6 +21,10 @@ Public Class Main
         ' Setting focus at the first text-box
         ' Definindo foco automático para a primeira caixa de texto
         tb_valor.Select()
+
+        ' Showing the MazeBank's total clients
+        ' Mostrando o número total de clientes do MazeBank
+        label_clients.Text = $"MazeBank - Total de Clientes: {Cliente.NumeroDeClientes}"
     End Sub
 
     ' Withdraw - Account 01
@@ -85,14 +89,12 @@ Public Class Main
             tb_extrato_2.Text = Conta02.Extrato
             tb_valor.Text = ""
             MsgBox($"Transfêrencia de R$ {FormatNumber(ValorTransferencia, 2)} para {Conta02.Titular.Nome} efetuada com sucesso!", MsgBoxStyle.Information)
-
         End If
     End Sub
 
     ' Withdraw - Account 02
     ' Sacar - Conta 02
     Public Sub btn_sacar_2_Click(sender As Object, e As EventArgs) Handles btn_sacar_2.Click
-
         Dim valorSaque As Double = Val(tb_valor_2.Text)
         Dim RetornoSaque As Boolean = Conta02.Sacar(valorSaque)
 
@@ -153,5 +155,4 @@ Public Class Main
             MsgBox($"Transfêrencia de R$ {FormatNumber(ValorTransferencia, 2)} para {Conta01.Titular.Nome} efetuada com sucesso!", MsgBoxStyle.Information)
         End If
     End Sub
-
 End Class

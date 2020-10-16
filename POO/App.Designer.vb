@@ -33,7 +33,9 @@ Partial Class Main
         Me.tb_extrato = New System.Windows.Forms.TextBox()
         Me.label_extrato = New System.Windows.Forms.Label()
         Me.gb_details = New System.Windows.Forms.GroupBox()
+        Me.label_dados = New System.Windows.Forms.Label()
         Me.gb_details_2 = New System.Windows.Forms.GroupBox()
+        Me.label_dados_2 = New System.Windows.Forms.Label()
         Me.tb_extrato_2 = New System.Windows.Forms.TextBox()
         Me.label_extrato_2 = New System.Windows.Forms.Label()
         Me.label_saldo_2 = New System.Windows.Forms.Label()
@@ -44,8 +46,7 @@ Partial Class Main
         Me.tb_valor_2 = New System.Windows.Forms.TextBox()
         Me.btn_deposito_2 = New System.Windows.Forms.Button()
         Me.label_digite_2 = New System.Windows.Forms.Label()
-        Me.label_dados = New System.Windows.Forms.Label()
-        Me.label_dados_2 = New System.Windows.Forms.Label()
+        Me.label_clients = New System.Windows.Forms.Label()
         Me.gb_details.SuspendLayout()
         Me.gb_details_2.SuspendLayout()
         Me.SuspendLayout()
@@ -159,6 +160,16 @@ Partial Class Main
         Me.gb_details.TabStop = False
         Me.gb_details.Text = "Detalhes da Conta"
         '
+        'label_dados
+        '
+        Me.label_dados.AutoSize = True
+        Me.label_dados.Location = New System.Drawing.Point(395, 22)
+        Me.label_dados.Name = "label_dados"
+        Me.label_dados.Size = New System.Drawing.Size(160, 20)
+        Me.label_dados.TabIndex = 13
+        Me.label_dados.Text = "CPF: 000.000.000-00"
+        Me.label_dados.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'gb_details_2
         '
         Me.gb_details_2.Controls.Add(Me.label_dados_2)
@@ -178,6 +189,16 @@ Partial Class Main
         Me.gb_details_2.TabIndex = 14
         Me.gb_details_2.TabStop = False
         Me.gb_details_2.Text = "Detalhes da Conta"
+        '
+        'label_dados_2
+        '
+        Me.label_dados_2.AutoSize = True
+        Me.label_dados_2.Location = New System.Drawing.Point(395, 22)
+        Me.label_dados_2.Name = "label_dados_2"
+        Me.label_dados_2.Size = New System.Drawing.Size(160, 20)
+        Me.label_dados_2.TabIndex = 14
+        Me.label_dados_2.Text = "CPF: 000.000.000-00"
+        Me.label_dados_2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'tb_extrato_2
         '
@@ -270,31 +291,22 @@ Partial Class Main
         Me.label_digite_2.TabIndex = 7
         Me.label_digite_2.Text = "Digite um valor"
         '
-        'label_dados
+        'label_clients
         '
-        Me.label_dados.AutoSize = True
-        Me.label_dados.Location = New System.Drawing.Point(395, 22)
-        Me.label_dados.Name = "label_dados"
-        Me.label_dados.Size = New System.Drawing.Size(160, 20)
-        Me.label_dados.TabIndex = 13
-        Me.label_dados.Text = "CPF: 000.000.000-00"
-        Me.label_dados.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'label_dados_2
-        '
-        Me.label_dados_2.AutoSize = True
-        Me.label_dados_2.Location = New System.Drawing.Point(395, 22)
-        Me.label_dados_2.Name = "label_dados_2"
-        Me.label_dados_2.Size = New System.Drawing.Size(160, 20)
-        Me.label_dados_2.TabIndex = 14
-        Me.label_dados_2.Text = "CPF: 000.000.000-00"
-        Me.label_dados_2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.label_clients.AutoSize = True
+        Me.label_clients.Location = New System.Drawing.Point(930, 473)
+        Me.label_clients.Name = "label_clients"
+        Me.label_clients.Size = New System.Drawing.Size(216, 20)
+        Me.label_clients.TabIndex = 15
+        Me.label_clients.Text = "MazeBank - Total de Clientes"
+        Me.label_clients.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1197, 469)
+        Me.ClientSize = New System.Drawing.Size(1197, 511)
+        Me.Controls.Add(Me.label_clients)
         Me.Controls.Add(Me.gb_details_2)
         Me.Controls.Add(Me.gb_details)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -306,6 +318,7 @@ Partial Class Main
         Me.gb_details_2.ResumeLayout(False)
         Me.gb_details_2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents label_saldo As Label
@@ -332,4 +345,5 @@ Partial Class Main
     Friend WithEvents label_digite_2 As Label
     Friend WithEvents label_dados As Label
     Friend WithEvents label_dados_2 As Label
+    Friend WithEvents label_clients As Label
 End Class

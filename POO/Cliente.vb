@@ -6,9 +6,18 @@
             CPF = NumberCPF
             Profissao = Job
             Cidade = City
+            NumberOfClients += 1
         End Sub
 #End Region
 #Region "Properties/Propriedades"
+        ' Number Of Clients / Número de Clientes
+        Private Shared NumberOfClients As Integer
+        Public Shared ReadOnly Property NumeroDeClientes As Integer
+            Get
+                Return NumberOfClients
+            End Get
+        End Property
+
         ' Name
         Public Property Nome As String
 
