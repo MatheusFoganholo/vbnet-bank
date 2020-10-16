@@ -1,5 +1,13 @@
 ﻿Namespace MazeBank
     Public Class Cliente
+#Region "Constructors/Construtores"
+        Public Sub New(Name As String, NumberCPF As String, Job As String, City As String)
+            Nome = Name
+            CPF = NumberCPF
+            Profissao = Job
+            Cidade = City
+        End Sub
+#End Region
 #Region "Properties/Propriedades"
         ' Name
         Public Property Nome As String

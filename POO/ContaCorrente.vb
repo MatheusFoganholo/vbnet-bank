@@ -1,6 +1,14 @@
 ﻿Imports POO.MazeBank
 
 Public Class ContaCorrente
+#Region "Constructors/Construtores"
+    Public Sub New(NomeBanco As String, NAgencia As Short, NConta As Integer, SaldoAtual As Double)
+        NomeDoBanco = NomeBanco
+        Agencia = NAgencia
+        Conta = NConta
+        Saldo = SaldoAtual
+    End Sub
+#End Region
 
 #Region "Properties/Propriedades"
     ' Person/Titular

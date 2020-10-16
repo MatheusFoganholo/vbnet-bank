@@ -1,35 +1,19 @@
 ﻿Imports POO.MazeBank
 
 Public Class Main
-    ReadOnly Conta01 As New ContaCorrente
-    ReadOnly Conta02 As New ContaCorrente
+    ReadOnly Conta01 As New ContaCorrente("NuBank", 1234, 5772992, 5000)
+    ReadOnly Conta02 As New ContaCorrente("Inter", 1234, 2202219, 10000)
 
     Public Sub New()
         InitializeComponent()
         ' Account 01 - Conta 01
-        Conta01.Titular = New Cliente()
-        Conta01.Titular.Nome = "Matheus Foganholo"
-        Conta01.Titular.CPF = "54311777884"
-        Conta01.Titular.Profissao = "Programador"
-        Conta01.Titular.Cidade = "Jaú"
-        Conta01.NomeDoBanco = "NuBank"
-        Conta01.Agencia = 1234
-        Conta01.Conta = 5772992
-        Conta01.Saldo = 5000
+        Conta01.Titular = New Cliente("Matheus Foganholo", "54311777884", "Programador", "Jaú/SP")
         tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
         gb_details.Text = $"Bem-vindo, {Conta01.Titular.Nome}{vbCrLf}Banco: {Conta01.NomeDoBanco}{vbCrLf}Agência: {Conta01.Agencia}{vbCrLf}Número da conta: {Conta01.Conta}"
         label_dados.Text = $"CPF: {Conta01.Titular.CPF.Insert(3, ".").Insert(7, ".").Insert(11, "-")}"
 
         ' Account 02 - Conta 02
-        Conta02.Titular = New Cliente
-        Conta02.Titular.Nome = "Elís Peruchi"
-        Conta02.Titular.CPF = "17486214830"
-        Conta02.Titular.Profissao = "Veterinária"
-        Conta02.Titular.Cidade = "Torrinha"
-        Conta02.NomeDoBanco = "Inter"
-        Conta02.Agencia = 1234
-        Conta02.Conta = 2202219
-        Conta02.Saldo = 10000
+        Conta02.Titular = New Cliente("Elís Peruchi", "17486214830", "Veterinária", "Torrinha/SP")
         tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
         gb_details_2.Text = $"Bem-vinda, {Conta02.Titular.Nome}{vbCrLf}Banco: {Conta02.NomeDoBanco}{vbCrLf}Agência: {Conta02.Agencia}{vbCrLf}Número da conta: {Conta02.Conta}"
         label_dados_2.Text = $"CPF: {Conta02.Titular.CPF.Insert(3, ".").Insert(7, ".").Insert(11, "-")}"
