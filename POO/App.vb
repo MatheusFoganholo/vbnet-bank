@@ -9,7 +9,7 @@ Public Class Main
         ' Account 01 - Conta 01
         Conta01.Titular = New Cliente()
         Conta01.Titular.Nome = "Matheus Foganholo"
-        Conta01.Titular.CPF = "123.456.789-01"
+        Conta01.Titular.CPF = "54311777884"
         Conta01.Titular.Profissao = "Programador"
         Conta01.Titular.Cidade = "Jaú"
         Conta01.NomeDoBanco = "NuBank"
@@ -18,11 +18,12 @@ Public Class Main
         Conta01.Saldo = 5000
         tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
         gb_details.Text = $"Bem-vindo, {Conta01.Titular.Nome}{vbCrLf}Banco: {Conta01.NomeDoBanco}{vbCrLf}Agência: {Conta01.Agencia}{vbCrLf}Número da conta: {Conta01.Conta}"
+        label_dados.Text = $"CPF: {Conta01.Titular.CPF.Insert(3, ".").Insert(7, ".").Insert(11, "-")}"
 
         ' Account 02 - Conta 02
         Conta02.Titular = New Cliente
         Conta02.Titular.Nome = "Elís Peruchi"
-        Conta02.Titular.CPF = "987.654.321-09"
+        Conta02.Titular.CPF = "17486214830"
         Conta02.Titular.Profissao = "Veterinária"
         Conta02.Titular.Cidade = "Torrinha"
         Conta02.NomeDoBanco = "Inter"
@@ -31,6 +32,7 @@ Public Class Main
         Conta02.Saldo = 10000
         tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
         gb_details_2.Text = $"Bem-vinda, {Conta02.Titular.Nome}{vbCrLf}Banco: {Conta02.NomeDoBanco}{vbCrLf}Agência: {Conta02.Agencia}{vbCrLf}Número da conta: {Conta02.Conta}"
+        label_dados_2.Text = $"CPF: {Conta02.Titular.CPF.Insert(3, ".").Insert(7, ".").Insert(11, "-")}"
 
         ' Setting focus at the first text-box
         ' Definindo foco automático para a primeira caixa de texto

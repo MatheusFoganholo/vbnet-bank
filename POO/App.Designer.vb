@@ -44,6 +44,8 @@ Partial Class Main
         Me.tb_valor_2 = New System.Windows.Forms.TextBox()
         Me.btn_deposito_2 = New System.Windows.Forms.Button()
         Me.label_digite_2 = New System.Windows.Forms.Label()
+        Me.label_dados = New System.Windows.Forms.Label()
+        Me.label_dados_2 = New System.Windows.Forms.Label()
         Me.gb_details.SuspendLayout()
         Me.gb_details_2.SuspendLayout()
         Me.SuspendLayout()
@@ -51,7 +53,7 @@ Partial Class Main
         'label_saldo
         '
         Me.label_saldo.AutoSize = True
-        Me.label_saldo.Location = New System.Drawing.Point(9, 87)
+        Me.label_saldo.Location = New System.Drawing.Point(9, 102)
         Me.label_saldo.Name = "label_saldo"
         Me.label_saldo.Size = New System.Drawing.Size(89, 20)
         Me.label_saldo.TabIndex = 2
@@ -59,7 +61,7 @@ Partial Class Main
         '
         'tb_saldo
         '
-        Me.tb_saldo.Location = New System.Drawing.Point(13, 110)
+        Me.tb_saldo.Location = New System.Drawing.Point(13, 125)
         Me.tb_saldo.Name = "tb_saldo"
         Me.tb_saldo.ReadOnly = True
         Me.tb_saldo.Size = New System.Drawing.Size(244, 26)
@@ -139,6 +141,7 @@ Partial Class Main
         '
         'gb_details
         '
+        Me.gb_details.Controls.Add(Me.label_dados)
         Me.gb_details.Controls.Add(Me.tb_extrato)
         Me.gb_details.Controls.Add(Me.label_extrato)
         Me.gb_details.Controls.Add(Me.label_saldo)
@@ -158,6 +161,7 @@ Partial Class Main
         '
         'gb_details_2
         '
+        Me.gb_details_2.Controls.Add(Me.label_dados_2)
         Me.gb_details_2.Controls.Add(Me.tb_extrato_2)
         Me.gb_details_2.Controls.Add(Me.label_extrato_2)
         Me.gb_details_2.Controls.Add(Me.label_saldo_2)
@@ -266,6 +270,26 @@ Partial Class Main
         Me.label_digite_2.TabIndex = 7
         Me.label_digite_2.Text = "Digite um valor"
         '
+        'label_dados
+        '
+        Me.label_dados.AutoSize = True
+        Me.label_dados.Location = New System.Drawing.Point(395, 22)
+        Me.label_dados.Name = "label_dados"
+        Me.label_dados.Size = New System.Drawing.Size(160, 20)
+        Me.label_dados.TabIndex = 13
+        Me.label_dados.Text = "CPF: 000.000.000-00"
+        Me.label_dados.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'label_dados_2
+        '
+        Me.label_dados_2.AutoSize = True
+        Me.label_dados_2.Location = New System.Drawing.Point(395, 22)
+        Me.label_dados_2.Name = "label_dados_2"
+        Me.label_dados_2.Size = New System.Drawing.Size(160, 20)
+        Me.label_dados_2.TabIndex = 14
+        Me.label_dados_2.Text = "CPF: 000.000.000-00"
+        Me.label_dados_2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -306,4 +330,6 @@ Partial Class Main
     Friend WithEvents tb_valor_2 As TextBox
     Friend WithEvents btn_deposito_2 As Button
     Friend WithEvents label_digite_2 As Label
+    Friend WithEvents label_dados As Label
+    Friend WithEvents label_dados_2 As Label
 End Class
