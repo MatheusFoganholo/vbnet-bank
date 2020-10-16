@@ -9,6 +9,16 @@ Public Class ContaCorrente
     Private Saldo As Double = 0
     Public Extrato As String = ""
 
+    ' Set Balance
+    ' Definindo Saldo
+    Public Sub DefinirSaldo(SaldoInicial As Double)
+        If SaldoInicial < 0 Then
+            Saldo = 0
+        Else
+            Saldo = SaldoInicial
+        End If
+    End Sub
+
     ' Get Balance
     ' Obter Saldo
     Public Function ObterSaldo() As Double

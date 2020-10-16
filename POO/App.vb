@@ -15,6 +15,7 @@ Public Class Main
         Conta01.NomeDoBanco = "NuBank"
         Conta01.Agencia = 1234
         Conta01.Conta = 5772992
+        Conta01.DefinirSaldo(5000)
         tb_saldo.Text = FormatNumber(Conta01.ObterSaldo(), 2)
         gb_details.Text = $"Bem-vindo, {Conta01.Titular.Nome}{vbCrLf}Banco: {Conta01.NomeDoBanco}{vbCrLf}Agência: {Conta01.Agencia}{vbCrLf}Número da conta: {Conta01.Conta}"
 
@@ -27,6 +28,7 @@ Public Class Main
         Conta02.NomeDoBanco = "Inter"
         Conta02.Agencia = 1234
         Conta02.Conta = 2202219
+        Conta02.DefinirSaldo(10000)
         tb_saldo_2.Text = FormatNumber(Conta02.ObterSaldo(), 2)
         gb_details_2.Text = $"Bem-vinda, {Conta02.Titular.Nome}{vbCrLf}Banco: {Conta02.NomeDoBanco}{vbCrLf}Agência: {Conta02.Agencia}{vbCrLf}Número da conta: {Conta02.Conta}"
     End Sub
