@@ -6,8 +6,14 @@ Public Class ContaCorrente
     Public NomeDoBanco As String = "Banco do Brasil"
     Public Agencia As Short = 1234
     Public Conta As Integer = 0
-    Public Saldo As Double = 0
+    Private Saldo As Double = 0
     Public Extrato As String = ""
+
+    ' Get Balance
+    ' Obter Saldo
+    Public Function ObterSaldo() As Double
+        Return Saldo
+    End Function
 
     ' Função Sacar
     ' Withdraw function

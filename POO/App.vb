@@ -15,8 +15,7 @@ Public Class Main
         Conta01.NomeDoBanco = "NuBank"
         Conta01.Agencia = 1234
         Conta01.Conta = 5772992
-        Conta01.Saldo = 5000
-        tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
+        tb_saldo.Text = FormatNumber(Conta01.ObterSaldo(), 2)
         gb_details.Text = $"Bem-vindo, {Conta01.Titular.Nome}{vbCrLf}Banco: {Conta01.NomeDoBanco}{vbCrLf}Agência: {Conta01.Agencia}{vbCrLf}Número da conta: {Conta01.Conta}"
 
         ' Account 02 - Conta 02
@@ -28,8 +27,7 @@ Public Class Main
         Conta02.NomeDoBanco = "Inter"
         Conta02.Agencia = 1234
         Conta02.Conta = 2202219
-        Conta02.Saldo = 10000
-        tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
+        tb_saldo_2.Text = FormatNumber(Conta02.ObterSaldo(), 2)
         gb_details_2.Text = $"Bem-vinda, {Conta02.Titular.Nome}{vbCrLf}Banco: {Conta02.NomeDoBanco}{vbCrLf}Agência: {Conta02.Agencia}{vbCrLf}Número da conta: {Conta02.Conta}"
     End Sub
 
@@ -45,11 +43,11 @@ Public Class Main
             MsgBox($"É impossível sacar essa quantia, digite um valor válido!", MsgBoxStyle.Critical, "Resultado do saque")
         Else
             If RetornoSaque = True Then
-                tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
+                tb_saldo.Text = FormatNumber(Conta01.ObterSaldo(), 2)
                 tb_valor.Text = ""
-                Conta01.Extrato += $"{Now} - Saque de R$ {FormatNumber(valorSaque, 2)} realizado. Saldo restante: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+                Conta01.Extrato += $"{Now} - Saque de R$ {FormatNumber(valorSaque, 2)} realizado. Saldo restante: R$ {FormatNumber(Conta01.ObterSaldo(), 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
                 tb_extrato.Text = Conta01.Extrato
-                MsgBox($"Você sacou R$ {FormatNumber(valorSaque, 2)} e restaram R$ {FormatNumber(Conta01.Saldo, 2)} em sua conta corrente.", MsgBoxStyle.Information, "Resultado do saque")
+                MsgBox($"Você sacou R$ {FormatNumber(valorSaque, 2)} e restaram R$ {FormatNumber(Conta01.ObterSaldo, 2)} em sua conta corrente.", MsgBoxStyle.Information, "Resultado do saque")
             Else
                 tb_valor.Text = ""
                 MsgBox($"Você tentou sacar um valor maior do que o seu saldo. Digite um valor válido.", MsgBoxStyle.Critical, "Resultado do saque")
@@ -66,9 +64,9 @@ Public Class Main
             MsgBox("É impossível depositar essa quantia. Digite um valor válido.", MsgBoxStyle.Critical)
         Else
             Conta01.Depositar(ValorDepositar)
-            tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
+            tb_saldo.Text = FormatNumber(Conta01.ObterSaldo(), 2)
             tb_valor.Text = ""
-            Conta01.Extrato += $"{Now} - Depósito de R$ {FormatNumber(ValorDepositar, 2)} realizado. Saldo atual: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            Conta01.Extrato += $"{Now} - Depósito de R$ {FormatNumber(ValorDepositar, 2)} realizado. Saldo atual: R$ {FormatNumber(Conta01.ObterSaldo(), 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
             tb_extrato.Text = Conta01.Extrato
             MsgBox($"Depósito de R$ {FormatNumber(ValorDepositar, 2)} efetuado com sucesso!", MsgBoxStyle.Information, "Resultado do depósito")
         End If
@@ -81,16 +79,16 @@ Public Class Main
         Dim RetornoTransferencia As Boolean = Conta01.Transferir(ValorTransferencia, Conta02)
 
         If RetornoTransferencia = False Then
-            If ValorTransferencia > Conta02.Saldo Then
+            If ValorTransferencia > Conta02.ObterSaldo() Then
                 MsgBox("É impossível transferir um valor maior do que o seu saldo. Digite um valor válido", MsgBoxStyle.Critical)
             Else
                 MsgBox("Impossível transferir essa quantia. Digite um valor válido!", MsgBoxStyle.Critical)
             End If
         Else
-            tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
-            tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
-            Conta01.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} realizada para {Conta02.Titular.Nome}. Saldo restante: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
-            Conta02.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} recebida de {Conta01.Titular.Nome}. Saldo atual: R$ {FormatNumber(Conta02.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            tb_saldo.Text = FormatNumber(Conta01.ObterSaldo(), 2)
+            tb_saldo_2.Text = FormatNumber(Conta02.ObterSaldo(), 2)
+            Conta01.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} realizada para {Conta02.Titular.Nome}. Saldo restante: R$ {FormatNumber(Conta01.ObterSaldo(), 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            Conta02.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} recebida de {Conta01.Titular.Nome}. Saldo atual: R$ {FormatNumber(Conta02.ObterSaldo(), 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
             tb_extrato.Text = Conta01.Extrato
             tb_extrato_2.Text = Conta02.Extrato
             tb_valor.Text = ""
@@ -111,11 +109,11 @@ Public Class Main
             MsgBox($"É impossível sacar essa quantia, digite um valor válido!", MsgBoxStyle.Critical, "Resultado do saque")
         Else
             If RetornoSaque = True Then
-                tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
+                tb_saldo_2.Text = FormatNumber(Conta02.ObterSaldo(), 2)
                 tb_valor_2.Text = ""
-                Conta02.Extrato += $"{Now} - Saque de R$ {FormatNumber(valorSaque, 2)} realizado. Saldo restante: R$ {FormatNumber(Conta02.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+                Conta02.Extrato += $"{Now} - Saque de R$ {FormatNumber(valorSaque, 2)} realizado. Saldo restante: R$ {FormatNumber(Conta02.ObterSaldo(), 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
                 tb_extrato_2.Text = Conta02.Extrato
-                MsgBox($"Você sacou R$ {FormatNumber(valorSaque, 2)} e restaram R$ {FormatNumber(Conta02.Saldo, 2)} em sua conta corrente.", MsgBoxStyle.Information, "Resultado do saque")
+                MsgBox($"Você sacou R$ {FormatNumber(valorSaque, 2)} e restaram R$ {FormatNumber(Conta02.ObterSaldo(), 2)} em sua conta corrente.", MsgBoxStyle.Information, "Resultado do saque")
             Else
                 tb_valor.Text = ""
                 MsgBox($"Você tentou sacar um valor maior do que o seu saldo. Digite um valor válido.", MsgBoxStyle.Critical, "Resultado do saque")
@@ -132,9 +130,9 @@ Public Class Main
             MsgBox("É impossível depositar essa quantia. Digite um valor válido.", MsgBoxStyle.Critical)
         Else
             Conta02.Depositar(ValorDepositar)
-            tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
+            tb_saldo_2.Text = FormatNumber(Conta02.ObterSaldo(), 2)
             tb_valor_2.Text = ""
-            Conta02.Extrato += $"{Now} - Depósito de R$ {FormatNumber(ValorDepositar, 2)} realizado. Saldo atual: R$ {FormatNumber(Conta02.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            Conta02.Extrato += $"{Now} - Depósito de R$ {FormatNumber(ValorDepositar, 2)} realizado. Saldo atual: R$ {FormatNumber(Conta02.ObterSaldo(), 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
             tb_extrato_2.Text = Conta02.Extrato
             MsgBox($"Depósito de R$ {FormatNumber(ValorDepositar, 2)} efetuado com sucesso!", MsgBoxStyle.Information, "Resultado do depósito")
         End If
@@ -147,16 +145,16 @@ Public Class Main
         Dim RetornoTransferencia As Boolean = Conta02.Transferir(ValorTransferencia, Conta01)
 
         If RetornoTransferencia = False Then
-            If ValorTransferencia > Conta02.Saldo Then
+            If ValorTransferencia > Conta02.ObterSaldo() Then
                 MsgBox("É impossível transferir um valor maior do que o seu saldo. Digite um valor válido", MsgBoxStyle.Critical)
             Else
                 MsgBox("Impossível transferir essa quantia. Digite um valor válido!", MsgBoxStyle.Critical)
             End If
         Else
-            tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
-            tb_saldo_2.Text = FormatNumber(Conta02.Saldo, 2)
-            Conta01.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} recebida de {Conta02.Titular.Nome}. Saldo atual: R$ {FormatNumber(Conta01.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
-            Conta02.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} realizada para {Conta01.Titular.Nome}. Saldo restante: R$ {FormatNumber(Conta02.Saldo, 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            tb_saldo.Text = FormatNumber(Conta01.ObterSaldo(), 2)
+            tb_saldo_2.Text = FormatNumber(Conta02.ObterSaldo(), 2)
+            Conta01.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} recebida de {Conta02.Titular.Nome}. Saldo atual: R$ {FormatNumber(Conta01.ObterSaldo(), 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
+            Conta02.Extrato += $"{Now} - Transferência de R$ {FormatNumber(ValorTransferencia, 2)} realizada para {Conta01.Titular.Nome}. Saldo restante: R$ {FormatNumber(Conta02.ObterSaldo(), 2)}{vbCrLf}---------------------------------------------------{vbCrLf}"
             tb_extrato.Text = Conta01.Extrato
             tb_extrato_2.Text = Conta02.Extrato
             tb_valor_2.Text = ""
