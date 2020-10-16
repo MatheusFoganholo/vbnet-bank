@@ -1,4 +1,4 @@
-﻿Imports POO.MazeBank
+﻿Imports Clients.MazeBank
 
 Public Class Main
     ReadOnly Conta01 As New ContaCorrente("NuBank", 1234, 5772992, 5000)
@@ -7,7 +7,7 @@ Public Class Main
     Public Sub New()
         InitializeComponent()
         ' Account 01 - Conta 01
-        Conta01.Titular = New Cliente("Matheus Foganholo", "54311777884", "Programador", "Jaú/SP")
+        Conta01.Titular = New Cliente("Matheusz Foganholo", "54311777884", "Programador", "Jaú/SP")
         tb_saldo.Text = FormatNumber(Conta01.Saldo, 2)
         gb_details.Text = $"Bem-vindo, {Conta01.Titular.Nome}{vbCrLf}Banco: {Conta01.NomeDoBanco}{vbCrLf}Agência: {Conta01.Agencia}{vbCrLf}Número da conta: {Conta01.Conta}"
         label_dados.Text = $"CPF: {Conta01.Titular.CPF.Insert(3, ".").Insert(7, ".").Insert(11, "-")}"

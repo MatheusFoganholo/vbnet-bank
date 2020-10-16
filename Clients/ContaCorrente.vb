@@ -1,4 +1,4 @@
-﻿Imports POO.MazeBank
+﻿Imports Clients.MazeBank
 
 Public Class ContaCorrente
 #Region "Constructors/Construtores"
