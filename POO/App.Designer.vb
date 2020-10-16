@@ -59,9 +59,9 @@ Partial Class Main
         '
         'tb_saldo
         '
-        Me.tb_saldo.Enabled = False
         Me.tb_saldo.Location = New System.Drawing.Point(13, 110)
         Me.tb_saldo.Name = "tb_saldo"
+        Me.tb_saldo.ReadOnly = True
         Me.tb_saldo.Size = New System.Drawing.Size(244, 26)
         Me.tb_saldo.TabIndex = 4
         '
@@ -168,7 +168,7 @@ Partial Class Main
         Me.gb_details_2.Controls.Add(Me.tb_valor_2)
         Me.gb_details_2.Controls.Add(Me.btn_deposito_2)
         Me.gb_details_2.Controls.Add(Me.label_digite_2)
-        Me.gb_details_2.Location = New System.Drawing.Point(621, 12)
+        Me.gb_details_2.Location = New System.Drawing.Point(605, 12)
         Me.gb_details_2.Name = "gb_details_2"
         Me.gb_details_2.Size = New System.Drawing.Size(581, 446)
         Me.gb_details_2.TabIndex = 14
@@ -206,8 +206,10 @@ Partial Class Main
         'tb_saldo_2
         '
         Me.tb_saldo_2.Enabled = False
+        Me.tb_saldo_2.ForeColor = System.Drawing.SystemColors.WindowText
         Me.tb_saldo_2.Location = New System.Drawing.Point(13, 110)
         Me.tb_saldo_2.Name = "tb_saldo_2"
+        Me.tb_saldo_2.ReadOnly = True
         Me.tb_saldo_2.Size = New System.Drawing.Size(244, 26)
         Me.tb_saldo_2.TabIndex = 4
         '
@@ -268,7 +270,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1218, 469)
+        Me.ClientSize = New System.Drawing.Size(1197, 469)
         Me.Controls.Add(Me.gb_details_2)
         Me.Controls.Add(Me.gb_details)
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
