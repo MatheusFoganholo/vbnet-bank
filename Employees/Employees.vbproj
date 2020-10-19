@@ -80,6 +80,10 @@
       <DependentUpon>App.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Classes\Employees\Director.vb" />
+    <Compile Include="Classes\Employees\Employee.vb" />
+    <Compile Include="Classes\Employees\Manager.vb" />
+    <Compile Include="Classes\Libs\EmployeesBonus.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
