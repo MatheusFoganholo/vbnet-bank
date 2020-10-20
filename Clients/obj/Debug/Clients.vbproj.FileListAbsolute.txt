@@ -9,3 +9,4 @@ C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Client
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Clients\obj\Debug\Clients.exe
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Clients\obj\Debug\Clients.xml
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Clients\obj\Debug\Clients.pdb
+C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Clients\obj\Debug\Clients.vbprojAssemblyReference.cache
