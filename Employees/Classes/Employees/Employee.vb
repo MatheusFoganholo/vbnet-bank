@@ -9,7 +9,15 @@
                 Return _CPF
             End Get
         End Property
-        Public Property Salary As Double
+        Private Property Salary As Double
+        Public Property Salario As Double
+            Get
+                Return Salary
+            End Get
+            Protected Set(value As Double)
+                Salary = value
+            End Set
+        End Property
         Private Shared _TotalEmployees As Integer
         Public Shared ReadOnly Property TotalEmployees As Integer
             Get
@@ -29,9 +37,11 @@
 #Region "Methods/Métodos"
         ' Employee Anual Bonification
         ' Bonificação Anual do Funcionário
-        Public Overridable Function GetBonus() As Double
-            Return Salary * 0.1
-        End Function
+        Public MustOverride Function GetBonus()
+
+        ' Increase Salary
+        ' Aumento de Salário
+        Public MustOverride Sub IncreaseSalary()
 #End Region
 
     End Class

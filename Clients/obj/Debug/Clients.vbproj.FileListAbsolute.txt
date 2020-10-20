@@ -1,4 +1,3 @@
-C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Clients\obj\Debug\Clients.vbprojAssemblyReference.cache
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Clients\obj\Debug\Clients.Main.resources
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Clients\obj\Debug\Clients.Resources.resources
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Clients\obj\Debug\Clients.vbproj.GenerateResource.cache

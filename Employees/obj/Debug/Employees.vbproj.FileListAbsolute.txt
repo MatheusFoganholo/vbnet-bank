@@ -9,3 +9,4 @@ C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Employ
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Employees\obj\Debug\Employees.xml
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Employees\obj\Debug\Employees.pdb
 C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Employees\obj\Debug\Employees.vbprojAssemblyReference.cache
+C:\Users\Mathe\Google Drive\Programação\Estudos\Alura\VB.NET\vbnet-bank\Employees\obj\Debug\Employees.App.resources

@@ -10,7 +10,13 @@
         ' Manager Anual Bonification
         ' Bonificação Anual do Gerente
         Public Overrides Function GetBonus() As Double
-            Return Salary * 0.3
+            Return Salario * 0.3
+        End Function
+
+        ' Increase Salary
+        ' Aumento de Salário
+        Public Overrides Function IncreaseSalary() As Double
+            Return Salario * 1.15
         End Function
 #End Region
     End Class
